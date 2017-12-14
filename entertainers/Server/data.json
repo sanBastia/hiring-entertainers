@@ -1,0 +1,225 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title_event": "",
+      "description": "",
+      "start_event": "",
+      "end_event": "",
+      "category": "",
+      "userId": "",
+      "status": ""
+    },
+    {
+      "title_event": "Party in da housee",
+      "description": "prty peopleeeeee",
+      "start_event": "2017-12-14",
+      "end_event": "2017-12-15",
+      "category": "Other Event",
+      "userId": 3,
+      "id": 2,
+      "status": 0
+    },
+    {
+      "title_event": "New Event 2",
+      "description": "Description of New event 2",
+      "start_event": "2017-12-14",
+      "end_event": "2017-12-16",
+      "category": "Sweet 17",
+      "userId": 3,
+      "id": 3,
+      "status": 0
+    }
+  ],
+  "event_requirements": [
+    {
+      "id": 1,
+      "eventId": "",
+      "requirement": "",
+      "total": ""
+    },
+    {
+      "eventId": 2,
+      "requirement": "MC / Master of Ceremony",
+      "total": "1",
+      "id": 2
+    },
+    {
+      "eventId": 3,
+      "requirement": "Standup Comedian",
+      "total": "1",
+      "id": 3
+    },
+    {
+      "eventId": 3,
+      "requirement": "MC / Master of Ceremony",
+      "total": "2",
+      "id": 4
+    },
+    {
+      "eventId": 3,
+      "requirement": "Singer",
+      "total": "3",
+      "id": 5
+    }
+  ],
+  "requirements": [
+    {
+      "id": 1,
+      "type": "Standup Comedian"
+    },
+    {
+      "id": 2,
+      "type": "MC / Master of Ceremony"
+    },
+    {
+      "id": 3,
+      "type": "Singer"
+    },
+    {
+      "id": 4,
+      "type": "Band"
+    },
+    {
+      "id": 5,
+      "type": "Dancer / Group of Dancers"
+    },
+    {
+      "id": 6,
+      "type": "Influencer"
+    },
+    {
+      "id": 7,
+      "type": "Clown"
+    },
+    {
+      "id": 8,
+      "type": "Speakers"
+    }
+  ],
+  "user_requirements": [
+    {
+      "id": 1,
+      "requirement": "",
+      "userId": ""
+    },
+    {
+      "requirement": "DJ",
+      "userId": 2,
+      "id": 2
+    },
+    {
+      "requirement": "Influencer",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "requirement": "Singer",
+      "userId": 5,
+      "id": 4
+    },
+    {
+      "requirement": "Dancer",
+      "userId": 5,
+      "id": 5
+    },
+    {
+      "requirement": "DJ",
+      "userId": 5,
+      "id": 6
+    },
+    {
+      "requirement": "Dancer",
+      "userId": 6,
+      "id": 7
+    },
+    {
+      "requirement": "DJ",
+      "userId": 6,
+      "id": 8
+    },
+    {
+      "requirement": "Influencer",
+      "userId": 6,
+      "id": 9
+    }
+  ],
+  "applied_performers": [
+    {
+      "id": 1,
+      "userId": "",
+      "eventId": "",
+      "requirement": "",
+      "status": "",
+      "username":""
+    },
+    {
+      "userId": 5,
+      "eventId": 3,
+      "requirement": "Singer",
+      "status": 0,
+      "username":"taeyang",
+      "id": 2
+      
+    },
+    {
+      "userId": 6,
+      "eventId": 3,
+      "requirement": "Singer",
+      "status": 0,
+      "username":"gdragon",
+      "id": 3
+    }
+  ],
+  "stars": [
+    {
+      "id": 1,
+      "userId": "",
+      "poin": ""
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "irsan",
+      "username": "san",
+      "password": "password888",
+      "status": 0
+    },
+    {
+      "id": 2,
+      "name": "sebastian",
+      "username": "bastia",
+      "password": "password888",
+      "status": 1
+    },
+    {
+      "username": "kiamsiap",
+      "password": "bagan",
+      "name": "yanti",
+      "status": 0,
+      "id": 3
+    },
+    {
+      "username": "havana",
+      "password": "havana",
+      "name": "havana",
+      "status": 0,
+      "id": 4
+    },
+    {
+      "username": "taeyang",
+      "password": "taeyang",
+      "name": "taeyang",
+      "status": 1,
+      "id": 5
+    },
+    {
+      "username": "gdragon",
+      "password": "gdragon",
+      "name": "gdragon",
+      "status": 1,
+      "id": 6
+    }
+  ]
+}
