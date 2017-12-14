@@ -44,7 +44,7 @@ class RootRouter extends React.Component{
     this.renderRootPerformer = this.renderRootPerformer.bind(this);
     this.handleRoot = this.handleRoot.bind(this);
   }
-  componentDidMount(){
+  componentWillMount(){
     
     AsyncStorage.getItem("status")
     .then(res => JSON.parse(res))
@@ -175,7 +175,7 @@ class RootRouter extends React.Component{
     if(this.state.userStatus){
        return this.renderRootPerformer()
     }
-    return this.renderRootManager()
+      return this.renderRootManager()
   }
   render(){
     return (

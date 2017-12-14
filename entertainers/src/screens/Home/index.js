@@ -41,11 +41,10 @@ class Home extends Component {
 
 onAddButtonPress = () => Actions.AddRequirements();
 onSearchButtonPress = () => Actions.tab_search();
-onLogOutButtonPress = () => {
-  AsyncStorage.clear();
-
-  return Actions.login();
+onLogOutButtonPress(){
+  return AsyncStorage.removeItem('status').then(()=> Actions.login()).catch(err => console.log(err)); 
 }
+
 
   renderManagerHome(){
     return (
@@ -110,7 +109,8 @@ onLogOutButtonPress = () => {
     if(this.state.userStatus){
       return this.renderPerformerHome()
     }
-    return this.renderManagerHome()
+      return this.renderManagerHome()
+    
   }
 
   render() {
