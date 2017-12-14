@@ -76,7 +76,25 @@ const styles = {
     },
     styleCheckBoxSelectMultiple:{
       tintColor: '#fff'
-    }
+    },
+    wrapperButtonTwo:{
+      flex: 1,
+      marginTop: 2
+   },
+   wrapperButton:{
+      flex: 1,
+      flexDirection: 'row',
+   },
+   buttonContainerTwo:{
+    backgroundColor: '#c10909',
+    paddingVertical: 15,
+    marginBottom: 10
+  },
+  buttonText:{
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: '700'
+  },
   }
   
   export default styles;

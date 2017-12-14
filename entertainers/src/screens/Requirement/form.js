@@ -16,6 +16,7 @@ import create_user_requirements from './API';
 
 import styles from './style';
 import create_event, { read_requirements } from './API';
+import { Actions } from 'react-native-router-flux';
 
 const Performer = ['Standup Comedian', 'MC / Master of Ceremony', 'Singer', 'Band', 'Dancer', 'DJ', 'Influencer', 'Clown', 'Speakers','Magician']
 

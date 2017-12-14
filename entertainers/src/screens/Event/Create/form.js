@@ -13,12 +13,15 @@ import {
 import DatePicker from 'react-native-datepicker'
 import SelectMultiple from 'react-native-select-multiple'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 
 import styles from './style';
 import customStyle from './customStyle';
 import create_event, { read_requirements } from './API';
 
 const Performer = ['Standup Comedian', 'MC / Master of Ceremony', 'Singer', 'Band', 'Dancer', 'DJ', 'Influencer', 'Clown', 'Speakers', 'Magician']
+
+const onBackButtonPress = () => Actions.pop();
 
 class Form extends Component {
     
@@ -183,10 +186,10 @@ class Form extends Component {
                 <Picker.Item key={'unselectable'} label="Event Category" value="Event Category" />
                 <Picker.Item key="1" label="Wedding" value="Wedding" />
                 <Picker.Item key="2" label="Birthday" value="Birthday" />
-                <Picker.Item key="2" label="Concert" value="Concert" />
-                <Picker.Item key="2" label="Sweet 17" value="Sweet 17" />
-                <Picker.Item key="2" label="Bazaar / Festival" value="Bazaar / Festival" />
-                <Picker.Item key="3" label="Other Event" value="Other Event" />
+                <Picker.Item key="3" label="Concert" value="Concert" />
+                <Picker.Item key="4" label="Sweet 17" value="Sweet 17" />
+                <Picker.Item key="5" label="Bazaar / Festival" value="Bazaar / Festival" />
+                <Picker.Item key="6" label="Other Event" value="Other Event" />
             </Picker>
         </View>
 
@@ -213,6 +216,19 @@ class Form extends Component {
         >
           <Text style={styles.buttonText}>CREATE</Text>
         </TouchableOpacity>
+
+        <View style={styles.wrapperButton}>
+                                <View style={styles.wrapperButtonTwo}> 
+                                     <TouchableOpacity
+                                      style={styles.buttonContainerTwo}
+                                       onPress={onBackButtonPress}>
+                                        <Text 
+                                        style={styles.buttonText}>
+                                          Back 
+                                        </Text>
+                                    </TouchableOpacity>
+                                  </View>
+                         </View>
       
       </View>
     );

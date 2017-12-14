@@ -24,7 +24,7 @@ class AppliedPerformer extends Component {
       userId: '',
       items: []
     }
-    this.handleReadApplying = this.handleReadApplying.bind(this);
+    // this.handleReadApplying = this.handleReadApplying.bind(this);
   }
 
   componentDidMount() {

@@ -16,6 +16,8 @@ const onButtonPress = () => Alert.alert('Coming soon!');
 const onCreateButtonPress = () => Actions.createEvent();
 
 const onProfileButtonPress = () => Actions.tab_profile();
+
+const onEventListPress = () => Actions.tab_event();
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -39,11 +41,16 @@ class Home extends Component {
 
 onAddButtonPress = () => Actions.AddRequirements();
 onSearchButtonPress = () => Actions.tab_search();
+onLogOutButtonPress = () => {
+  AsyncStorage.clear();
+
+  return Actions.login();
+}
 
   renderManagerHome(){
     return (
       <View style={styles.contents}>
-      <TouchableOpacity onPress={onButtonPress}>
+      <TouchableOpacity onPress={onEventListPress}>
         <Card containerStyle={styles.card} 
               title="Event List" 
               titleStyle={styles.titles}>
@@ -80,7 +87,7 @@ onSearchButtonPress = () => Actions.tab_search();
   renderPerformerHome(){
     return (
       <View style={styles.contents}>
-      <TouchableOpacity onPress={this.onAddButtonPress}>
+      <TouchableOpacity onPress={() => this.onAddButtonPress()}>
         <Card containerStyle={styles.card} title="Add Requirements" titleStyle={styles.titles}>
           <View style={styles.icon}>
               <Icon name="plus" size={40} color="#900"/>
@@ -88,7 +95,7 @@ onSearchButtonPress = () => Actions.tab_search();
         </Card>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={this.onSearchButtonPress}>
+      <TouchableOpacity onPress={() => this.onSearchButtonPress()}>
         <Card containerStyle={styles.card} title="Search events" titleStyle={styles.titles}>
           <View style={styles.icon}>
               <Icon name="search" size={40} color="#900"/>
@@ -118,6 +125,14 @@ onSearchButtonPress = () => Actions.tab_search();
             </Text>
       </View>
           {this.handleRender()}
+
+          <TouchableOpacity onPress={() => this.onLogOutButtonPress()}>
+        <Card containerStyle={styles.card} title="Logout" titleStyle={styles.titles}>
+          <View style={styles.icon}>
+              <Icon name="power-off" size={40} color="#900"/>
+          </View> 
+        </Card>
+      </TouchableOpacity>
         </ScrollView>
       </View>
 
