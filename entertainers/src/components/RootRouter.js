@@ -38,13 +38,13 @@ class RootRouter extends React.Component{
     super(props)
     this.state = {
       userId : '',
-      userStatus: 0
+      userStatus:''
     }
     this.renderRootManager = this.renderRootManager.bind(this);
     this.renderRootPerformer = this.renderRootPerformer.bind(this);
     this.handleRoot = this.handleRoot.bind(this);
   }
-  componentWillMount(){
+  componentDidMount(){
     
     AsyncStorage.getItem("status")
     .then(res => JSON.parse(res))
@@ -57,13 +57,6 @@ class RootRouter extends React.Component{
 
   renderRootManager(){
       return (
-        <Scene key="root">
-        
-                <Scene key="login" component={Login} hideNavBar />
-                <Scene key="register" component={Register}  hideNavBar />
-                <Scene key="createEvent" component={CreateEvent} hideNavBar />
-                <Scene key="AppliedPerformer" component={AppliedPerformer} hideNavBar />
-            
                 <Scene
                   key="main"
                   tabs={true}
@@ -109,19 +102,11 @@ class RootRouter extends React.Component{
                     />
         
                 </Scene>
-              </Scene>
       );
   }
 
   renderRootPerformer(){
     return (
-      <Scene key="root">
-      
-              <Scene key="login" component={Login} hideNavBar />
-              <Scene key="register" component={Register}  hideNavBar />
-              <Scene key="AddRequirements" component={AddRequirements} hideNavBar />
-              <Scene key="ApplyingPerformer" component={ApplyingPerformer} hideNavBar />
-                     
               <Scene
                 key="main"
                 tabs={true}
@@ -149,38 +134,29 @@ class RootRouter extends React.Component{
                   hideNavBar
                   component={SearchEvent}
                  />
-                 <Scene
-                   key="tab_event"
-                   title="My Event"
-                   iconName="list"
-                   icon={TabIcon}
-                   hideNavBar
-                   component={MyEvent}
-                  />
-                  <Scene
-                   key="tab_profile"
-                   title="Profile"
-                   iconName="user-circle"
-                   icon={TabIcon}
-                   hideNavBar
-                   component={Profile}
-                  />
-      
               </Scene>
-            </Scene>
     );
   }
   handleRoot(){
     
-    if(this.state.userStatus){
-       return this.renderRootPerformer()
-    }
-      return this.renderRootManager()
+   
   }
   render(){
+    console.log(this.state.userStatus, 'status');
     return (
       <Router>
-      {this.handleRoot()}
+        <Scene key="root">
+      
+              <Scene key="login" component={Login} hideNavBar />
+              <Scene key="register" component={Register}  hideNavBar />
+              <Scene key="AddRequirements" component={AddRequirements} hideNavBar />
+              <Scene key="ApplyingPerformer" component={ApplyingPerformer} hideNavBar />
+              <Scene key="AppliedPerformer" component={AppliedPerformer} hideNavBar />
+                     
+            {
+              this.state.userStatus ? this.renderRootPerformer() : this.renderRootManager
+            }
+        </Scene>
       </Router>
     );
   }

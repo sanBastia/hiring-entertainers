@@ -42,7 +42,15 @@ class Home extends Component {
 onAddButtonPress = () => Actions.AddRequirements();
 onSearchButtonPress = () => Actions.tab_search();
 onLogOutButtonPress(){
-  return AsyncStorage.removeItem('status').then(()=> Actions.login()).catch(err => console.log(err)); 
+  try {
+    AsyncStorage.clear()
+  } catch (error) {
+    if(error){
+      Alert.alert('Something Wrong');
+    }
+  }
+  Actions.login();
+
 }
 
 
